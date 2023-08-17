@@ -14,11 +14,11 @@ export class AppComponent {
 
 
   setToIndo(){
-    this.language.changeDetectionEmitter.emit(translation.id)
+    this.language.setLanguange('id')
   }
 
   setToEnglish(){
-    this.language.changeDetectionEmitter.emit(translation.en)
+    this.language.setLanguange('en')
   }
   
 }

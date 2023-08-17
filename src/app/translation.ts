@@ -1,4 +1,4 @@
-export const translation = {
+export let translation = {
     en : {
         greet: "Good Morning"
     },

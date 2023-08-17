@@ -1,20 +1,18 @@
 import { EventEmitter, Injectable } from '@angular/core';
 import { translation } from '../translation';
+  
 
 @Injectable({
   providedIn: 'root'
 })
 export class LanguageService {
-  changeDetectionEmitter = new EventEmitter<any>();
+  changeDetectionEmitter = new EventEmitter();
   constructor() {
   }
 
-  get defaultBrowserLanguage() {
-    return navigator.language
-  }
-
-  get translation() {
-    return translation
+  setLanguange(key: string){
+    let object: string | any = translation[key as keyof typeof translation]
+    return this.changeDetectionEmitter.emit(object)
   }
 
   
